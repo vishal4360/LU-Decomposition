@@ -8,31 +8,58 @@ To write a program to find the LU Decomposition of a matrix.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+## (1) To Find The L and u matrix
+1. Import NumPy and lu from scipy.linalg.
+2. Read matrix input from the user using input() and convert it into a NumPy array.
+3. Perform LU decomposition using lu() function and store the result in P, L, U.
+4. Print the lower triangular matrix L.
+5. Print the upper triangular matrix U.
+
+## (2) To Find The L and u matrix
+1. Import NumPy and the functions lu_factor and lu_solve from scipy.linalg.
+2. Read matrix A (coefficient matrix) from the user and convert it into a NumPy array.
+3. Read matrix or vector B (right-hand side of the equation Ax = B) from the user and convert it into a NumPy array.
+4. Perform LU factorization of matrix A using lu_factor(A).This returns lu (combined LU decomposition) and piv (pivot indices).
+5. Solve the linear system using lu_solve((piv, lu), B) and store the result.
+6. Print the solution vector or matrix.
+
 
 ## Program:
-(i) To find the L and U matrix
+(1) To find the L and U matrix
 ```
-/*
-Program to find the L and U matrix.
-Developed by: 
-RegisterNumber: 
-*/
+'''Program to find L and U matrix using LU decomposition.
+Developed by: Vishal c
+RegisterNumber: 212224100062
+'''
+import numpy as np
+from scipy.linalg import lu
+A=np.array(eval(input()))
+P,L,U=lu(A)
+print(L)
+print(U)
 ```
-(ii) To find the LU Decomposition of a matrix
+(2) To find the LU Decomposition of a matrix
 ```
-/*
-Program to find the LU Decomposition of a matrix.
-Developed by: 
-RegisterNumber: 
-*/
-```
+'''Program to solve a matrix using LU decomposition.
+Developed by: Vishal c
+RegisterNumber: 212224100062
+'''
 
+# To print X matrix (solution to the equations)
+import numpy as np
+from scipy.linalg import  lu_factor, lu_solve
+A=np.array(eval(input()))
+b=np.array(eval(input()))
+lu,piv=lu_factor(A)
+X=lu_solve((lu, piv),b)
+print(X)
+```
 ## Output:
-![lu decomposition]()
+![image](https://github.com/user-attachments/assets/11f2331d-2b5f-419d-a975-7dd4a2e8c7d4)
+
+![image](https://github.com/user-attachments/assets/bac8fa85-f04b-42c9-9def-de1be7cecf5b)
+
+
 
 
 ## Result:
